@@ -40,6 +40,7 @@ paths:
           description: Customer phone number
           schema:
             type: string
+          required: true
       responses:
         '200':
           description: The response that represents an appointment for the repair
