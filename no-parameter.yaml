@@ -1,0 +1,36 @@
+openapi: 3.0.0
+info:
+  version: 1.0.0
+  title: Avalanche API
+servers:
+  - url: https://utahavalanchecenter.azurewebsites.net/api
+    description: Azure Function
+paths:
+  /avalanchefunction:
+    get:
+      summary: Get the avalanche forecast for Salt Lake City forecast area
+      responses:
+        '200':
+          description: Avalanche conditions retrieved successfully
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  Danger:
+                    type: string
+                    description: Avalanche danger level
+                  Rose:
+                    type: string
+                    format: uri
+                    description: URL to an image representing the danger level
+                  CurrentConditions:
+                    type: string
+                    description: Detailed description of the current avalanche conditions
+                  BottomLine:
+                    type: string
+                    description: Summary of the conditions and potential avalanche dangers
+                  RecentActivity:
+                    type: string
+                    description: Recent weather and avalanche activity
+      operationId: getAvalanchefunction
