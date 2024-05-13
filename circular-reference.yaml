@@ -83,12 +83,6 @@ paths:
             application/json:
               schema:
                 "$ref": "#/components/schemas/SupportInfo"
-        default:
-          description: Error
-          content:
-            application/json:
-              schema:
-                "$ref": "#/components/schemas/ErrorResponse"
   "/DeviceDataMock/devices/default/messages":
     get:
       operationId: getMessageList
