@@ -1,0 +1,199 @@
+{
+  "openapi": "3.0.1",
+  "info": {
+    "title": "https://api.nasa.gov API",
+    "description": "https://api.nasa.gov API",
+    "version": "v1.0"
+  },
+  "servers": [
+    {
+      "url": "https://api.nasa.gov"
+    }
+  ],
+  "paths": {
+    "/mars-photos/api/v1/rovers/curiosity/photos": {
+      "get": {
+        "description": "Get /mars-photos/api/v1/rovers/curiosity/photos",
+        "operationId": "Get.mars-photos.api.v1.rovers.curiosity.photos",
+        "parameters": [
+          {
+            "name": "api_key",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "sol",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "camera",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "headers": {
+              "Nel": {
+                "schema": {
+                  "type": "string"
+                }
+              },
+              "Reporting-Endpoints": {
+                "schema": {
+                  "type": "string"
+                }
+              },
+              "X-Api-Umbrella-Request-Id": {
+                "schema": {
+                  "type": "string"
+                }
+              },
+              "X-Cache": {
+                "schema": {
+                  "type": "string"
+                }
+              },
+              "X-Content-Type-Options": {
+                "schema": {
+                  "type": "string"
+                }
+              },
+              "X-Download-Options": {
+                "schema": {
+                  "type": "string"
+                }
+              },
+              "X-Permitted-Cross-Domain-Policies": {
+                "schema": {
+                  "type": "string"
+                }
+              },
+              "X-Ratelimit-Limit": {
+                "schema": {
+                  "type": "string"
+                }
+              },
+              "X-Ratelimit-Remaining": {
+                "schema": {
+                  "type": "string"
+                }
+              },
+              "X-Runtime": {
+                "schema": {
+                  "type": "string"
+                }
+              },
+              "X-Vcap-Request-Id": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            },
+            "content": {
+              "application/json; charset=utf-8": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "photos": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "id": {
+                            "type": "number"
+                          },
+                          "sol": {
+                            "type": "number"
+                          },
+                          "camera": {
+                            "type": "object",
+                            "properties": {
+                              "id": {
+                                "type": "number"
+                              },
+                              "name": {
+                                "type": "string"
+                              },
+                              "rover_id": {
+                                "type": "number"
+                              },
+                              "full_name": {
+                                "type": "string"
+                              }
+                            }
+                          },
+                          "img_src": {
+                            "type": "string"
+                          },
+                          "earth_date": {
+                            "type": "string"
+                          },
+                          "rover": {
+                            "type": "object",
+                            "properties": {
+                              "id": {
+                                "type": "number"
+                              },
+                              "name": {
+                                "type": "string"
+                              },
+                              "landing_date": {
+                                "type": "string"
+                              },
+                              "launch_date": {
+                                "type": "string"
+                              },
+                              "status": {
+                                "type": "string"
+                              },
+                              "max_sol": {
+                                "type": "number"
+                              },
+                              "max_date": {
+                                "type": "string"
+                              },
+                              "total_photos": {
+                                "type": "number"
+                              },
+                              "cameras": {
+                                "type": "array",
+                                "items": {
+                                  "type": "object",
+                                  "properties": {
+                                    "name": {
+                                      "type": "string"
+                                    },
+                                    "full_name": {
+                                      "type": "string"
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "x-ms-generated-by": {
+    "toolName": "Dev Proxy",
+    "toolVersion": "0.20.0"
+  }
+}
