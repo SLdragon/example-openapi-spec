@@ -4,7 +4,7 @@ info:
   description: A simple service to manage repairs
   version: 1.0.0
 servers:
-  - url: https://rentutypeb.azurewebsites.net/api
+  - url: https://rentutypebnew.azurewebsites.net/api
     description: The repair api server
 components:
   securitySchemes:
