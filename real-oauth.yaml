@@ -4,7 +4,7 @@ info:
   description: A simple service to manage repairs
   version: 1.0.0
 servers:
-  - url: https://plugin8acc17.azurewebsites.net/api
+  - url: https://pluginrentu.azurewebsites.net/api
     description: The repair api server
 components:
   securitySchemes:
