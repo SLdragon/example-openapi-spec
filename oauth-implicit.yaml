@@ -8,7 +8,7 @@ servers:
     description: The repair api server
 components:
   securitySchemes:
-    oAuth2AuthCode:    # <---- arbitrary name
+    oAuth2AuthImplicit:    # <---- arbitrary name
       type: oauth2
       description: This API uses OAuth 2 with the implicit grant flow. [More info](https://api.example.com/docs/auth)
       flows:
@@ -28,7 +28,7 @@ paths:
         Assign repair to technician for the customer based on car type and
         repair type
       security:
-        - oAuth2AuthCode: []
+        - oAuth2AuthImplicit: []
       parameters:
         - name: carType
           in: query
@@ -95,7 +95,7 @@ paths:
       summary: Find repair by customer name
       description: Find repair by customer name
       security:
-        - oAuth2AuthCode: []
+        - oAuth2AuthImplicit: []
       parameters:
         - name: customerName
           in: query
