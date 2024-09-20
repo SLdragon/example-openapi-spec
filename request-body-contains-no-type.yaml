@@ -206,8 +206,6 @@ components:
         name:
           type: string
           example: doggie
-        category:
-          $ref: '#/components/schemas/Category'
         photoUrls:
           type: array
           xml:
@@ -216,12 +214,6 @@ components:
             type: string
             xml:
               name: photoUrl
-        tags:
-          type: array
-          xml:
-            wrapped: true
-          items:
-            $ref: '#/components/schemas/Tag'
         status:
           type: string
           description: pet status in the store
