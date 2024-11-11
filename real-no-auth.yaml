@@ -10,7 +10,7 @@ paths:
   /repairs:
     get:
       operationId: listRepairs
-      summary: List all repairs
+      summary: List all repairs without auth
       description: Returns a list of repairs with their details and images
       parameters:
         - name: assignedTo
