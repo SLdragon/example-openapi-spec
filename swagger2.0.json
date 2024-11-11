@@ -247,7 +247,7 @@
                     "400": {
                         "description": "Invalid tag value"
                     }
-                }
+                },
                 "deprecated": true
             }
         },
