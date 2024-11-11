@@ -87,15 +87,7 @@
                             "$ref": "#/definitions/ApiResponse"
                         }
                     }
-                },
-                "security": [
-                    {
-                        "petstore_auth": [
-                            "write:pets",
-                            "read:pets"
-                        ]
-                    }
-                ]
+                }
             }
         },
         "/pet": {
@@ -129,15 +121,7 @@
                     "405": {
                         "description": "Invalid input"
                     }
-                },
-                "security": [
-                    {
-                        "petstore_auth": [
-                            "write:pets",
-                            "read:pets"
-                        ]
-                    }
-                ]
+                }
             },
             "put": {
                 "tags": [
@@ -175,15 +159,7 @@
                     "405": {
                         "description": "Validation exception"
                     }
-                },
-                "security": [
-                    {
-                        "petstore_auth": [
-                            "write:pets",
-                            "read:pets"
-                        ]
-                    }
-                ]
+                }
             }
         },
         "/pet/findByStatus": {
@@ -230,15 +206,7 @@
                     "400": {
                         "description": "Invalid status value"
                     }
-                },
-                "security": [
-                    {
-                        "petstore_auth": [
-                            "write:pets",
-                            "read:pets"
-                        ]
-                    }
-                ]
+                }
             }
         },
         "/pet/findByTags": {
@@ -279,15 +247,7 @@
                     "400": {
                         "description": "Invalid tag value"
                     }
-                },
-                "security": [
-                    {
-                        "petstore_auth": [
-                            "write:pets",
-                            "read:pets"
-                        ]
-                    }
-                ],
+                }
                 "deprecated": true
             }
         },
@@ -326,12 +286,7 @@
                     "404": {
                         "description": "Pet not found"
                     }
-                },
-                "security": [
-                    {
-                        "api_key": []
-                    }
-                ]
+                }
             },
             "post": {
                 "tags": [
@@ -375,15 +330,7 @@
                     "405": {
                         "description": "Invalid input"
                     }
-                },
-                "security": [
-                    {
-                        "petstore_auth": [
-                            "write:pets",
-                            "read:pets"
-                        ]
-                    }
-                ]
+                }
             },
             "delete": {
                 "tags": [
@@ -419,15 +366,7 @@
                     "404": {
                         "description": "Pet not found"
                     }
-                },
-                "security": [
-                    {
-                        "petstore_auth": [
-                            "write:pets",
-                            "read:pets"
-                        ]
-                    }
-                ]
+                }
             }
         },
         "/store/inventory": {
@@ -453,12 +392,7 @@
                             }
                         }
                     }
-                },
-                "security": [
-                    {
-                        "api_key": []
-                    }
-                ]
+                }
             }
         },
         "/store/order": {
