@@ -1,110 +1,70 @@
-openapi: 3.0.1
+openapi: 3.0.0
 info:
-  title: Swagger Petstore - OpenAPI 3.0 - Subset
-  description: "This is a sample Pet Store Server based on the OpenAPI 3.0 specification.  You can find out more about\nSwagger at [https://swagger.io](https://swagger.io). In the third iteration of the pet store, we've switched to the design first approach!\nYou can now help us improve the API whether it's by making changes to the definition itself or to the code.\nThat way, with time, we can improve the API in general, and expose some of the new features in OAS3.\n\n_If you're looking for the Swagger 2.0/OAS 2.0 version of Petstore, then click [here](https://editor.swagger.io/?url=https://petstore.swagger.io/v2/swagger.yaml). Alternatively, you can load via the `Edit > Load Petstore OAS 2.0` menu option!_\n\nSome useful links:\n- [The Pet Store repository](https://github.com/swagger-api/swagger-petstore)\n- [The source API definition for the Pet Store](https://github.com/swagger-api/swagger-petstore/blob/master/src/main/resources/openapi.yaml)"
-  termsOfService: http://swagger.io/terms/
-  contact:
-    email: apiteam@swagger.io
-  license:
-    name: Apache 2.0
-    url: http://www.apache.org/licenses/LICENSE-2.0.html
-  version: 1.0.11
+  title: Repair Service
+  description: A simple service to manage repairs
+  version: 1.0.0
 servers:
-  - url: https://petstore3.swagger.io/api/v3
+  - url: https://sme85beaf.azurewebsites.net/api
+    description: The repair api server
 paths:
-  /pet:
+  /repairs:
     post:
-      tags:
-        - pet
-      summary: Add a new pet to the store
-      description: Add a new pet to the store
-      operationId: addPet
+      operationId: createRepair
+      summary: Create a new repair
+      description: Creates a new repair with the provided details
       requestBody:
-        description: Create a new pet in the store
+        required: true
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/Pet'
-          application/xml:
-            schema:
-              $ref: '#/components/schemas/Pet'
-          application/x-www-form-urlencoded:
-            schema:
-              $ref: '#/components/schemas/Pet'
-        required: true
+              type: object
+              properties:
+                title:
+                  type: string
+                  description: The short summary of the repair
+                description:
+                  type: string
+                  description: The detailed description of the repair
+                assignedTo:
+                  type: string
+                  description: The user who is responsible for the repair
+                details:
+                  type: object
+                  description: Additional details about the repair
+                  properties:
+                    partNumber:
+                      type: string
+                      description: The part number of the item to be repaired
+                    warranty:
+                      type: boolean
+                      description: Whether the item is under warranty
       responses:
-        '200':
-          description: Successful operation
+        '201':
+          description: Repair created successfully
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Pet'
-            application/xml:
-              schema:
-                $ref: '#/components/schemas/Pet'
-        '400':
-          description: Invalid input
-        '422':
-          description: Validation exception
-components:
-  schemas:
-    Pet:
-      required:
-        - name
-        - photoUrls
-      type: object
-      properties:
-        id:
-          type: integer
-          format: int64
-          example: 10
-        name:
-          type: string
-          example: doggie
-        category:
-          $ref: '#/components/schemas/Category'
-        photoUrls:
-          type: array
-          items:
-            type: string
-            xml:
-              name: photoUrl
-          xml:
-            wrapped: true
-        tags:
-          type: array
-          items:
-            $ref: '#/components/schemas/Tag'
-          xml:
-            wrapped: true
-        status:
-          enum:
-            - available
-            - pending
-            - sold
-          type: string
-          description: pet status in the store
-      xml:
-        name: pet
-    Category:
-      type: object
-      properties:
-        id:
-          type: integer
-          format: int64
-          example: 1
-        name:
-          type: string
-          example: Dogs
-      xml:
-        name: category
-    Tag:
-      type: object
-      properties:
-        id:
-          type: integer
-          format: int64
-        name:
-          type: string
-      xml:
-        name: tag
+                type: object
+                properties:
+                  id:
+                    type: string
+                    description: The unique identifier of the created repair
+                  title:
+                    type: string
+                    description: The short summary of the repair
+                  description:
+                    type: string
+                    description: The detailed description of the repair
+                  assignedTo:
+                    type: string
+                    description: The user who is responsible for the repair
+                  details:
+                    type: object
+                    description: Additional details about the repair
+                    properties:
+                      partNumber:
+                        type: string
+                        description: The part number of the item to be repaired
+                      warranty:
+                        type: boolean
+                        description: Whether the item is under warranty
