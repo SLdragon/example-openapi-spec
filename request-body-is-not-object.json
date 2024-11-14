@@ -1,0 +1,37 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "Repair Service",
+    "description": "A simple service to manage repairs for various items",
+    "version": "1.0.0"
+  },
+  "servers": [
+    {
+      "url": "https://piercerepairsapi.azurewebsites.net/"
+    }
+  ],
+  "paths": {
+    "/repairs": {
+      "post": {
+        "operationId": "createRepair",
+        "summary": "Create a new repair",
+        "description": "Adds a new repair to the list with the given details and image URL",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "string"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "A successful response indicating that the repair was created"
+          }
+        }
+      }
+    }
+  }
+}
