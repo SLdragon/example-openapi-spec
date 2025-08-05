@@ -11,7 +11,7 @@ paths:
     get:
       operationId: listRepairs
       summary: List all repairs without auth
-      description: Returns a list of repairs with their details and images
+      description: Returns a list of repairs with their details and images. Will return all repairs if assignedTo is not specified.
       parameters:
         - name: assignedTo
           in: query

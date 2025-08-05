@@ -20,7 +20,7 @@ paths:
       parameters:
         - name: assignedTo
           in: query
-          description: Filter repairs by who they're assigned to
+          description: Filter repairs by who they're assigned to. Will return all repairs if assignedTo is not specified.
           schema:
             type: string
           required: false
